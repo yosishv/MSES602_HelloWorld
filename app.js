@@ -9,7 +9,10 @@ const server = http.createServer((req, res) => {
 	  res.end('Hello World. My name is yosish datla');
 });
 
-server.listen(port, hostname, () => {
+if (require.main === module) server.listen(port, hostname, () => {
 	  console.log(`Server running at http://${hostname}:${port}/`);
 });
 
+
+
+module.exports = server;

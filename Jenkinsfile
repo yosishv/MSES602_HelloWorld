@@ -1,15 +1,7 @@
-// Jenkinsfile (Declarative Pipeline)
-
 pipeline {
-    agent  any
+    agent any
     stages {
-        stage('build') {
-            steps {
-                sh 'npm --version'
-                sh 'npm install'
-            }
-        }
+        stage('Install') { steps { sh 'npm ci' } }
+        stage('Test') { steps { sh 'npm test' } }
     }
 }
-
-
